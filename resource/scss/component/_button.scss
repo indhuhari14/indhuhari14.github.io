@@ -1,0 +1,41 @@
+.green-button{
+    background-color: $brand-color;
+    color: $header-text-color;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid $brand-color;
+    padding: 30px 35px;
+    border-radius: 4px;
+    @include tablet-small{
+        padding: 20px 25px;
+    }
+    @include mobile{
+        padding: 15px;
+        font-weight: 500;
+    }
+    &:hover{
+        color: $brand-color;
+        background-color: #ffffff;
+        border: 2px solid $brand-color;
+        transition: all 0.3s;
+        outline: none;
+    }
+}
+.green-text{
+    position: relative;
+    &:hover{
+        &::after{
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: -5px;
+            height: 2px;
+            width: 100%;
+            background-color: $brand-color;
+            transition: all 0.3s ease-in-out;
+        }
+
+    }
+    
+}

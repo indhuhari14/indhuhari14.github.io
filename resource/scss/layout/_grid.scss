@@ -1,0 +1,77 @@
+.main-container{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+        @include laptop{
+            width: 90%;
+        }
+        @include tablet-small{
+            width: 70%;
+        }
+        @include mobile{
+            width: 90%;
+        }
+        [class*="grid-"] {
+            float: left;
+            @include tablet-small{
+                float: none;
+             }
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        &::after{
+            @include clear-fix;
+        } 
+        
+    
+}
+.grid-1-of-2{
+    width: calc((100%- #{$vertical-gutter})/2);
+    margin-right: $vertical-gutter;
+    margin-bottom: $horizontal-gutter;
+    @include tablet-small{
+        width: 100%;
+        margin-right: 0;
+    }
+    &::after{
+        @include clear-fix;
+    } 
+}
+.grid-large{
+    width: calc(70%- #{$vertical-gutter});
+    @include tablet-small{
+        width: 100%;
+    }
+    &:last-child{
+        width: 30%;
+        @include tablet-small{
+            width: 100%;
+        }   
+    }
+    .box-small{
+        width: calc((100%-#{$vertical-gutter-small})/3);
+        margin-right: 5px;
+        float: left;
+        @include mobile{
+            float: none;
+            width: 100%;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+        &::after{
+            @include clear-fix;
+        }   
+    }
+    .box-large{
+        width: 100%;
+        @include tablet-small{
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+}
+
+

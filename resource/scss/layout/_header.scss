@@ -1,0 +1,140 @@
+
+.site-head{
+	width: 100%;
+	height: 93px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .nav-bar{
+        height: 100%;
+        max-width: 1440px;
+        padding: 28px 40px;
+        margin: 0 auto;
+        text-align: center;
+        @include mobile{
+            padding: 20px 15px;
+        }
+    }
+    
+}
+.sticky{
+    background-color: $brand-color;
+    
+}
+.logo-link{
+    float: left;
+    img{
+        vertical-align: middle;
+    }
+}
+.nav-list-wrapper{
+    display: inline-block;
+    list-style: none;
+    vertical-align: middle;
+    @include tablet{
+        display: none;
+    }
+    .nav-list{
+        display: inline-block;
+        margin: 0 20px;
+        &-link{
+            color: $header-text-color;
+            font-family: $font;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            line-height: 2.8;
+        } 
+        @include tablet{
+            vertical-align: middle;
+            display: list-item;
+            list-style-type: none;
+        }   
+    }
+}
+@include tablet{
+    .show{
+        display: block;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 70vh;
+        min-height: 500px;
+        padding: 100px 0;
+        margin: 0;
+        text-align: center;
+        background-color: #23cf5fd8;
+        overflow-y: scroll;
+    }
+}
+@include mobile{
+    .nav-list-wrapper.show{
+        height: 100vh;
+    }
+}
+.nav-button{
+    float: right;
+    margin: 7px 30px 7px 7px;
+}
+.search-button{
+    color: $header-text-color;
+    margin: 0 20px;
+    font-size: 18px;
+    float: right;
+    margin: 7px 20px;
+    @include mobile{
+        margin: 7px 10px;;
+    }
+}
+.hamburger-icon{
+    background-color: transparent;
+	border: 0;
+	float: right;
+	display: none;
+	cursor: pointer;
+    position: relative;
+    z-index: 11;
+    .icon-bar{
+        width: 20px;
+        height: 4px;
+        background-color: #ffffff;
+        position: absolute;
+        right: -15px;
+    }
+    .first-bar{
+        top: 6px;
+    }
+    .sec-bar{
+        top: 14px;
+    }
+    .third-bar{
+        top: 22px;
+    }
+   
+    &:focus{
+	    outline: none;
+        
+    }
+    @include tablet{
+        display: block;
+    }
+    @include mobile{
+        margin: 0 10px;;
+    }
+}
+.close{
+   transition: all 0.3s;
+    .first-bar{
+        transform: rotate(45deg);
+    }
+    .sec-bar{
+        display: none;
+    }
+    .third-bar{
+        top: 6px;
+        transform: rotate(-45deg);   
+    }
+}
